@@ -118,7 +118,7 @@ amnumber_label_built = amnumber_label.build()
 
 orb_label = label(input_window, [45,2] , 'DarkSeaGreen3', [10,10], "PICK THE ORBITAL TYPE:")
 represent_label = label(input_window, [45,2] , 'DarkSeaGreen3', [10,150], "PICK THE REPRESENTATION TYPE:")
-orb_choice = dropdown(input_window, [25,3], 'white smoke', [160, 75], ["1_s", "2_s", "2_p"])
+orb_choice = dropdown(input_window, [25,3], 'white smoke', [160, 75], ["1_s", "2_s", "2_p", "s_p", "s_p_2", "s_p_3"])
 represent_choice = dropdown(input_window, [25,3], 'white smoke', [160, 225], ["1D", "2D", "RENDERING"])
 generate_button = button(input_window, [15,3], "ghost white", [210, 350], "GENERATE", lambda: generate(orb_type.get(), plot_type.get(), graphic_box_built, pqnumber_label_built, amnumber_label_built))
 

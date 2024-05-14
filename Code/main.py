@@ -7,9 +7,12 @@ def break_orbital(orb_type):
     """
     Functions breaks down orbital type input to components
     """
-    am_dic = {"s":0, "p": 1}
+    atomic_am_dic = {"s":0, "p": 1}
     orb_broken = orb_type.split("_")
-    return int(orb_broken[0]), am_dic[orb_broken[1]]
+    if orb_broken[0].is_integer():
+        return int(orb_broken[0]), am_dic[orb_broken[1]]
+    else:
+        ##
 
 def collect_inputs(orb_type, plot_type, canvas):
     n, l = break_orbital(orb_type)
