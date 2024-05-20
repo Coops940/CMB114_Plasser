@@ -17,6 +17,7 @@ def radial_wavefunction(n, l, r):
 def plot_orbitals(n, l, r_min, r_max, plot_type):
     r = np.linspace(r_min, r_max, 400)
     R = radial_wavefunction(n, l, r)
+    R = 4 * np.pi * r**2 * np.abs(R)**2 #Changes radial wavefunction to radial distrbution function
     
     if plot_type == '1D':
         plt.figure(figsize=(8, 4))
