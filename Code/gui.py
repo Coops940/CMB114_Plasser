@@ -6,9 +6,13 @@ l=0
 
 def generate(orb_type, plot_type, canvas, pqn_label, amn_label):
     print(orb_type, plot_type)
-    n, l = main.break_orbital(orb_type)
-    pqn_label.config(text = f"Principle Quantum Number:{n:>13.0f}")
-    amn_label.config(text = f"Angular Momentum Number:{l:>10.0f}")
+    try:
+        n, l = main.break_orbital(orb_type)
+        amn_label.config(text = f"Angular Momentum Number:{l:>10.0f}")
+    except:
+        n, l = "2", "1 or 2"
+        amn_label.config(text = f"Angular Momentum Number:{l:>10.0s}")
+    pqn_label.config(text = f"Principle Quantum Number:{n:>13.0s}")
     main.collect_inputs(orb_type, plot_type, canvas)
     return 
 
