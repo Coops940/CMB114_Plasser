@@ -1,3 +1,5 @@
+#JACK'S CODE
+#imports all libraries used
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import physical_constants
