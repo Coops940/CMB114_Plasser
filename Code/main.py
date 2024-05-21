@@ -21,7 +21,7 @@ def collect_inputs(orb_type, plot_type, canvas):
         print(orb_broken)
         if orb_broken[0] == "1" or orb_broken[0] == "2":
             n, l = break_orbital(orb_type)
-            plot = calculations_and_plots.plot_orbitals(n, l, 0, 10, plot_type)
+            plot = calculations_and_plots.plot_orbitals(int(n), int(l), 0, 10, plot_type)
         else:
             plot = hybrid_plots.hybrid_plot_orbitals(orb_type, 0, 10, plot_type)
         filename = image_file_handling.save_plot(plot, orb_type, plot_type)
