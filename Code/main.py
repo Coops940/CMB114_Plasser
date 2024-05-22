@@ -4,6 +4,16 @@ import calculations_and_plots
 import image_file_handling
 import hybrid_plots
 
+def calculate_hybrid_l(orb_type):
+    if orb_type == "s_p":
+        return ((0.5*1) + (0.5*2))
+    elif orb_type == "s_p_2":
+        return ((0.33*1) + (0.66*2))
+    elif orb_type == "s_p_3":
+        return ((0.25*1) + (0.75*2))
+    else:
+        print("Error: Unknown hybrid orbital")
+
 def break_orbital(orb_type):
     """
     Functions breaks down orbital type to components n and l

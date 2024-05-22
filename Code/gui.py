@@ -13,13 +13,13 @@ def generate(orb_type, plot_type, canvas, pqn_label, amn_label):
     print(orb_type, plot_type)
     #If orb_type can't be broken into n and l (meaning atomic orbital) then runs exception handling
     #Updates gui output window
-    try:
+    if orb_type.split("_")[0].isnumeric():
         n, l = main.break_orbital(orb_type)
-        amn_label.config(text = f"Angular Momentum Number:{l:>10.0f}")
-    except:
-        n, l = "2", "1 or 2"
-        amn_label.config(text = f"Angular Momentum Number:{l:>10.0s}")
-    pqn_label.config(text = f"Principle Quantum Number:{n:>13.0s}")
+    else:
+        n = "2"
+        l = main.calculate_hybrid_l(orb_type)
+    amn_label.config(text = f"Angular Momentum Number:{l:>8.2f}")
+    pqn_label.config(text = f"Principle Quantum Number:{n:>13s}")
     #Calls function in main.py 
     main.collect_inputs(orb_type, plot_type, canvas)
     return 
