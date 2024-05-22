@@ -24,7 +24,7 @@ def hybridise_wavefunctions(r, orb_type):
 
 def radial_wavefunction(n, l, r):
     """
-    Function used to caluate the radial wvafunciton dependant on n, l of orbital and rnage of radii given.
+    Function used to calculate the radial wavefunction dependent on n, l of orbital and range of radii given.
     """
     a0 = physical_constants['Bohr radius'][0] * 1e10  # Convert Bohr radius to angstroms
     Z = 1  # Assume Z=1 for hydrogen-like orbitals in a water molecule approximation
@@ -45,9 +45,9 @@ def hybrid_plot_orbitals(orb_type, r_min, r_max, plot_type):
     if plot_type == '1D':
         #Creates range of radii to use 
         r = np.linspace(r_min, r_max, 400)
-        #Calculates the radial distrubtion of s and p obrital character
+        #Calculates the radial distribution of s and p orbital character
         s_R, p_R = hybridise_wavefunctions(r, orb_type)
-        #Adds raidal distributions together
+        #Adds radial distributions together
         R = np.sum([s_R, p_R], axis = 0)
         
         #Plots graph including title and axis labels
